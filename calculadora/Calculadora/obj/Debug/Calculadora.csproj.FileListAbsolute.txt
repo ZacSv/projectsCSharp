@@ -1,0 +1,7 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\obj\Debug\Calculadora.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\calculadora\Calculadora\obj\Debug\Calculadora.pdb
