@@ -10,22 +10,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\nDigite a primeira tarefa para iniciarmos a lista: ");
-            string tarefaUsuario = Console.ReadLine();
-            List<string> Tarefas = new List<string>(); 
-            Tarefas.Add(tarefaUsuario);
-
+            List<string> Tarefas = new List<string>();
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("\n Bem vindo ao To Do List !\n");
+            Console.WriteLine("---------------------------------");
             int opcaoUsuario = 1;
             while (opcaoUsuario != 0)
             {
-                Console.WriteLine("" +
+                Console.WriteLine("\n" +
                     "Qual operação deseja realizar: \n" +
-                    "1 - Ver a pilha de tarefas\n" +
+                    "\n1 - Ver a lista de tarefas\n" +
                     "2 - Adicionar um novo item a lista\n" +
                     "3 - Modificar uma tarefa da fila\n" +
                     "4 - Remover item da lista\n" +
                     "0 - Finalizar programa ");
                 opcaoUsuario = int.Parse(Console.ReadLine());
+
+               
 
                 switch (opcaoUsuario)
                 {
@@ -38,18 +39,31 @@ namespace ConsoleApp1
                         Console.WriteLine("------------------------");
                         break;
                     case 2:
-                        Console.WriteLine("\nQual tarefa deseja adicionar ?\n");
-                        tarefaUsuario = Console.ReadLine();
-                        Tarefas.Add (tarefaUsuario);
+                        while (true)
+                        {   
+                            Console.WriteLine("\nQual tarefa deseja adicionar ?\n");
+                             string tarefaUsuarioAdicionar = Console.ReadLine();
+                            int numero = Tarefas.Count + 1;
+                            string item = numero + " - " + tarefaUsuarioAdicionar;
+                            Tarefas.Add(item);
+                            Console.WriteLine("\nSe deseja adicionar mais uma tarefa aperte s, caso contrário qualquer tecla");
+                            string opcaoSaida = Console.ReadLine().ToLower();
+                            if(opcaoSaida != "s")
+                            {
+                                break;
+                            }
+                        }
+                   
+                        
                         break;
                     case 3:
                         Console.WriteLine("\nDigite o nome da tarefa que deseja modificar: \n");
                         string tarefaParaModificar = Console.ReadLine();
                         int indice = Tarefas.IndexOf(tarefaParaModificar);
-
+                           
                         if (indice != -1)
                         {
-                            Console.WriteLine("Digite o novo nome desta tarefa: ");
+                            Console.WriteLine("\nDigite o novo nome desta tarefa: \n");
                             string tarefaAtualizada = Console.ReadLine();
                             Tarefas[indice] = tarefaAtualizada;
                             Console.WriteLine($"\nOk, tarefa atualizada com sucesso para {tarefaAtualizada}\n");
@@ -62,7 +76,7 @@ namespace ConsoleApp1
 
                     case 4:
                         Console.WriteLine("\nDigite a tarefa que deseja remover: \n");
-                        tarefaUsuario = Console.ReadLine();
+                        dynamic tarefaUsuario = Console.ReadLine();
                         Tarefas.Remove(tarefaUsuario);
                         Console.WriteLine($"\nOk, tarefa {tarefaUsuario} removida com sucesso !");
                         break;
