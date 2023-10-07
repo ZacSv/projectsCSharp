@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ConsoleApp1
 {
@@ -75,10 +73,23 @@ namespace ConsoleApp1
                         break;
 
                     case 4:
-                        Console.WriteLine("\nDigite a tarefa que deseja remover: \n");
-                        dynamic tarefaUsuario = Console.ReadLine();
-                        Tarefas.Remove(tarefaUsuario);
-                        Console.WriteLine($"\nOk, tarefa {tarefaUsuario} removida com sucesso !");
+                        Console.WriteLine("\n------------------------");
+                        foreach (string tarefa in Tarefas)
+                        {
+                            Console.WriteLine(tarefa);
+                        }
+                        Console.WriteLine("------------------------");
+                        Console.WriteLine("A lista está acima, digite o número tarefa que deseja remover: \n");
+                        string tarefaUsuario = Console.ReadLine();
+                        if (int.TryParse(tarefaUsuario, out int indiceParaExcluir) && indiceParaExcluir >= 0 && indiceParaExcluir < Tarefas.Count)
+                        {
+                            Tarefas.RemoveAt(indiceParaExcluir - 1);
+                            Console.WriteLine("\nElemento excluido, lista atualizada !\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Indice não encontrado, digite um índice válido !");
+                        }
                         break;
                      default:
                         Console.WriteLine("\nNão reconheço esta opção, tente novamente: ");
