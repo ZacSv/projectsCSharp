@@ -28,7 +28,9 @@ namespace Calculadora
             }
             else
             {
-                Console.WriteLine(valorTotal);
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("O valor da soma é: " + valorTotal);
+                Console.WriteLine("--------------------------------------");
             }
             
         }
@@ -43,7 +45,9 @@ namespace Calculadora
             }
             else
             {
-                Console.WriteLine(valorTotal);
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("O valor da subtração é: " + valorTotal);
+                Console.WriteLine("--------------------------------------");
             }
         }
         static void multiplicaValores(int arg1, int arg2)
@@ -57,7 +61,9 @@ namespace Calculadora
             }
             else
             {
-                Console.WriteLine(valorTotal);
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("O valor da multiplicação é: " + valorTotal);
+                Console.WriteLine("--------------------------------------");
             }
         }
         static void divideValores(int arg1, int arg2)
@@ -71,7 +77,9 @@ namespace Calculadora
             }
             else
             {
-                Console.WriteLine(valorTotal);
+                Console.WriteLine("--------------------------------------");
+                Console.WriteLine("O valor da divisão é: " + valorTotal);
+                Console.WriteLine("--------------------------------------");
             }
         }
 
@@ -87,19 +95,11 @@ namespace Calculadora
             Console.WriteLine("Digite o segundo número: ");
             int numero2 = int.Parse(Console.ReadLine());
 
-            
-            Console.WriteLine(
-                "Selecione a opção que deseja realizar utilizando os números do menu:\n" +
-                "1 - Soma\n" +
-                "2 - Subtração\n" +
-                "3 - Multiplicação\n" +
-                "4 - Divisão\n" +
-                "0 - Sair");
-            int opcaoUsuario = int.Parse(Console.ReadLine());
+            int opcaoUsuario;
             do
             {
                 Console.WriteLine(
-                    "Selecione a opção que deseja realizar utilizando os números do menu:\n" +
+                    "\nSelecione a opção que deseja realizar utilizando os números do menu:\n" +
                     "1 - Soma\n" +
                     "2 - Subtração\n" +
                     "3 - Multiplicação\n" +
