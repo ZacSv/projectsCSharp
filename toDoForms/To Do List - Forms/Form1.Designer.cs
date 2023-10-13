@@ -84,6 +84,7 @@
             this.tb_TaskTittle.Name = "tb_TaskTittle";
             this.tb_TaskTittle.Size = new System.Drawing.Size(347, 26);
             this.tb_TaskTittle.TabIndex = 7;
+            this.tb_TaskTittle.TextChanged += new System.EventHandler(this.tb_TaskTittle_TextChanged);
             // 
             // tb_DescriptionTable
             // 

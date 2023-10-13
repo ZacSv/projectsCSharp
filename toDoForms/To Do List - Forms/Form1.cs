@@ -46,11 +46,19 @@ namespace To_Do_List___Forms
         {
 
         }
-        DataGrid todoList = new DataGrid(); //Criando o 'banco de dados'
+        DataTable todoList = new DataTable(); //Criando o 'banco de dados'
         bool isEditing = false; //Definindo uma propriedade de rastreamento da edição
         private void Form1_Load(object sender, EventArgs e)
         {
             //Criação das linhas e colunas
+            todoList.Columns.Add("Titulo");
+            todoList.Columns.Add("Descrição");
+
+        }
+
+        private void tb_TaskTittle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
