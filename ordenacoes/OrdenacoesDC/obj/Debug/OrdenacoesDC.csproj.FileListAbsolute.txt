@@ -1,0 +1,7 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\bin\Debug\OrdenacoesDC.exe.config
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\bin\Debug\OrdenacoesDC.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\bin\Debug\OrdenacoesDC.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\obj\Debug\OrdenacoesDC.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\obj\Debug\OrdenacoesDC.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\obj\Debug\OrdenacoesDC.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\ordenacoes\OrdenacoesDC\obj\Debug\OrdenacoesDC.pdb

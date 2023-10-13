@@ -1,0 +1,10 @@
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\bin\Debug\To Do List - Forms.exe.config
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\bin\Debug\To Do List - Forms.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\bin\Debug\To Do List - Forms.pdb
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To Do List - Forms.csproj.AssemblyReference.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To_Do_List___Forms.Form1.resources
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To_Do_List___Forms.Properties.Resources.resources
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To Do List - Forms.csproj.GenerateResource.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To Do List - Forms.csproj.CoreCompileInputs.cache
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To Do List - Forms.exe
+C:\Users\isacv\OneDrive\Área de Trabalho\exerciciosCSharp\toDoForms\To Do List - Forms\obj\Debug\To Do List - Forms.pdb
