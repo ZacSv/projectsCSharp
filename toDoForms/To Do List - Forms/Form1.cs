@@ -57,9 +57,6 @@ namespace To_Do_List___Forms
             //Apontando o datagrid para a tabela de modo que ele mostre o que consta na base de dados
             dataGridViewTable.DataSource = todoList;
         }
-
-        
-
         private void tb_TaskTittle_TextChanged(object sender, EventArgs e)
         {
 
@@ -69,13 +66,13 @@ namespace To_Do_List___Forms
         {
             tb_TaskTittle.Text = "";
             tb_Description.Text = "";
+            tb_TaskTittle.Focus();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             tb_TaskTittle.Text = todoList.Rows[dataGridViewTable.CurrentCell.RowIndex].ItemArray[0].ToString();
             tb_Description.Text = todoList.Rows[dataGridViewTable.CurrentCell.RowIndex].ItemArray[1].ToString();
-
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
