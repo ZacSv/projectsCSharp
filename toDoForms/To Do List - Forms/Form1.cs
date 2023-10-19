@@ -1,20 +1,27 @@
-﻿using System;
+﻿using connectDB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace To_Do_List___Forms
 {
     public partial class Form1 : Form
     {
+
+        private CadastroTarefas CadastroTarefas;
+        
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,17 +53,23 @@ namespace To_Do_List___Forms
         {
 
         }
-        DataTable todoList = new DataTable(); //Criando o 'banco de dados'
-        bool isEditing = false; //Definindo uma propriedade de rastreamento da edição
-        private void Form1_Load(object sender, EventArgs e)
+      
+        public void Form1_Load(object sender, EventArgs e)
         {
-            //Criação das linhas e colunas
-            todoList.Columns.Add("Titulo");
-            todoList.Columns.Add("Descrição");
+            this.CadastroTarefas = new CadastroTarefas();
 
-            //Apontando o datagrid para a tabela de modo que ele mostre o que consta na base de dados
-            dataGridViewTable.DataSource = todoList;
+            Conexao conexao = new Conexao();
+
+            SqlDataReader temp = this.CadastroTarefas.listarTarefas();
+
+            DataTable dt = new DataTable();
+            dt.Load(temp);
+
+            dataGridViewTable.DataSource = dt;
+            
+
         }
+
         private void tb_TaskTittle_TextChanged(object sender, EventArgs e)
         {
 
@@ -65,43 +78,90 @@ namespace To_Do_List___Forms
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             tb_TaskTittle.Text = "";
+            lb_IDTask.Text = "";
             tb_Description.Text = "";
             tb_TaskTittle.Focus();
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            tb_TaskTittle.Text = todoList.Rows[dataGridViewTable.CurrentCell.RowIndex].ItemArray[0].ToString();
-            tb_Description.Text = todoList.Rows[dataGridViewTable.CurrentCell.RowIndex].ItemArray[1].ToString();
+            
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        public void buttonDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                todoList.Rows[dataGridViewTable.CurrentCell.RowIndex].Delete();
+                CadastroTarefas.removeTarefas(lb_IDTask.Text);
+                MessageBox.Show("Tarefa removida com sucesso!");
+                SqlDataReader temp = this.CadastroTarefas.listarTarefas();
+                DataTable dt = new DataTable();
+                dt.Load(temp);
+                dataGridViewTable.DataSource = dt;
+                tb_TaskTittle.Text = "";
+                tb_Description.Text = "";
+                lb_IDTask.Text = "";
             }
-            catch(Exception ex)
+            catch (Exception arg)
             {
-                Console.WriteLine("Erro: " + ex);
+
+               MessageBox.Show("A operação apresentou um erro" + arg.Message);
             }
+            
+       
         }
+
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (isEditing)
-            {
-                todoList.Rows[dataGridViewTable.CurrentCell.RowIndex]["Título"] = tb_TaskTittle.Text;
-                todoList.Rows[dataGridViewTable.CurrentCell.RowIndex]["Descrição"] = tb_Description.Text;
-            }
-            else
-            {
-                todoList.Rows.Add(tb_TaskTittle.Text, tb_Description.Text);
-            }
+            CadastroTarefas.adicionaTarefa(tb_TaskTittle.Text, tb_Description.Text);
+            SqlDataReader temp = this.CadastroTarefas.listarTarefas();
+            DataTable dt = new DataTable();
+            dt.Load(temp);
+            dataGridViewTable.DataSource = dt;
+        }
 
-            tb_Description.Text = "";
-            tb_TaskTittle.Text = "";
-            isEditing = false;
+        private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Description_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewTable_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridViewTable.Rows[e.RowIndex];
+
+            lb_IDTask.Text = row.Cells[0].Value.ToString();
+
+            tb_TaskTittle.Text = row.Cells[1].Value.ToString();
+
+            tb_Description.Text = row.Cells[2].Value.ToString();
+
+        }
+
+        private void dataGridViewTable_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridViewTable.Rows[e.RowIndex];
+
+            lb_IDTask.Text = row.Cells[0].Value.ToString();
+
+            tb_TaskTittle.Text = row.Cells[1].Value.ToString();
+
+            tb_Description.Text = row.Cells[2].Value.ToString();
         }
     }
 }

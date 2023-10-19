@@ -59,15 +59,5 @@ namespace To_Do_List___Forms.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap brain {
-            get {
-                object obj = ResourceManager.GetObject("brain", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
