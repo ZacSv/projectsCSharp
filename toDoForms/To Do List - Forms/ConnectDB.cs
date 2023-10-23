@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 
 namespace connectDB
@@ -12,16 +7,17 @@ namespace connectDB
     {
         private SqlCommand cmd;
         SqlConnection con = new SqlConnection();
-        public Conexao() 
+        public Conexao()
         {
-            ////Linha de conexão
+            con.ConnectionString = "Data Source = ISAC; Initial Catalog = Testes; Integrated Security = True";
             this.con = new SqlConnection(con.ConnectionString);
             this.cmd = this.con.CreateCommand();
             this.con.Open();
 
         }
         public SqlConnection Conectar()
-        {   if(con.State == System.Data.ConnectionState.Closed)
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
             {
                 con.Open();
             }
@@ -30,12 +26,12 @@ namespace connectDB
 
         public void Desconectar()
         {
-            if(con.State == System.Data.ConnectionState.Open)
+            if (con.State == System.Data.ConnectionState.Open)
             {
                 con.Close();
             }
         }
-            
+
         //Majoritariamente irá cuidar dde operações como Update, delete e create.
         public void NonQuery(string sql)
         {
@@ -47,7 +43,7 @@ namespace connectDB
         public SqlDataReader Query(string sql)
         {
             this.cmd.CommandText = sql;
-            return this.cmd.ExecuteReader();    
+            return this.cmd.ExecuteReader();
         }
     }
 }

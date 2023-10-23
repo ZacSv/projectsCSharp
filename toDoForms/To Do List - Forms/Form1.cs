@@ -1,13 +1,7 @@
 ﻿using connectDB;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -17,12 +11,14 @@ namespace To_Do_List___Forms
     {
 
         private CadastroTarefas CadastroTarefas;
-        
+
         public Form1()
         {
             InitializeComponent();
-           
+
         }
+
+        public bool isEditting = false;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -53,7 +49,7 @@ namespace To_Do_List___Forms
         {
 
         }
-      
+
         public void Form1_Load(object sender, EventArgs e)
         {
             this.CadastroTarefas = new CadastroTarefas();
@@ -66,7 +62,7 @@ namespace To_Do_List___Forms
             dt.Load(temp);
 
             dataGridViewTable.DataSource = dt;
-            
+
 
         }
 
@@ -77,15 +73,20 @@ namespace To_Do_List___Forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+
             tb_TaskTittle.Text = "";
             lb_IDTask.Text = "";
             tb_Description.Text = "";
             tb_TaskTittle.Focus();
+            tb_TaskTittle.ReadOnly = false;
+            tb_Description.ReadOnly = false;
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            
+            isEditting = true;
+            tb_TaskTittle.ReadOnly = false;
+            tb_Description.ReadOnly = false;
         }
 
         public void buttonDelete_Click(object sender, EventArgs e)
@@ -105,20 +106,33 @@ namespace To_Do_List___Forms
             catch (Exception arg)
             {
 
-               MessageBox.Show("A operação apresentou um erro" + arg.Message);
+                MessageBox.Show("A operação apresentou um erro" + arg.Message);
             }
-            
-       
+
+
         }
 
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            CadastroTarefas.adicionaTarefa(tb_TaskTittle.Text, tb_Description.Text);
-            SqlDataReader temp = this.CadastroTarefas.listarTarefas();
-            DataTable dt = new DataTable();
-            dt.Load(temp);
-            dataGridViewTable.DataSource = dt;
+
+            if (isEditting == true)
+            {
+                CadastroTarefas.editarTarefa(lb_IDTask.Text, tb_TaskTittle.Text, tb_Description.Text);
+                SqlDataReader refresh = this.CadastroTarefas.listarTarefas();
+                DataTable database = new DataTable();
+                database.Load(refresh);
+                dataGridViewTable.DataSource = database;
+                isEditting = false;
+            }
+            else
+            {
+                CadastroTarefas.adicionaTarefa(tb_TaskTittle.Text, tb_Description.Text);
+                SqlDataReader temp = this.CadastroTarefas.listarTarefas();
+                DataTable dt = new DataTable();
+                dt.Load(temp);
+                dataGridViewTable.DataSource = dt;
+            }
         }
 
         private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -162,6 +176,13 @@ namespace To_Do_List___Forms
             tb_TaskTittle.Text = row.Cells[1].Value.ToString();
 
             tb_Description.Text = row.Cells[2].Value.ToString();
+
+            tb_TaskTittle.ReadOnly = true;
+
+            isEditting = false;
+
+            tb_Description.ReadOnly = true;
+
         }
     }
 }

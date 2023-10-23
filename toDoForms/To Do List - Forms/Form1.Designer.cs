@@ -141,6 +141,7 @@
             // 
             this.tb_TaskTittle.Location = new System.Drawing.Point(35, 203);
             this.tb_TaskTittle.Name = "tb_TaskTittle";
+            this.tb_TaskTittle.ReadOnly = true;
             this.tb_TaskTittle.Size = new System.Drawing.Size(581, 26);
             this.tb_TaskTittle.TabIndex = 7;
             this.tb_TaskTittle.TextChanged += new System.EventHandler(this.tb_TaskTittle_TextChanged);
@@ -150,6 +151,7 @@
             this.tb_Description.Location = new System.Drawing.Point(35, 262);
             this.tb_Description.Multiline = true;
             this.tb_Description.Name = "tb_Description";
+            this.tb_Description.ReadOnly = true;
             this.tb_Description.Size = new System.Drawing.Size(581, 65);
             this.tb_Description.TabIndex = 8;
             this.tb_Description.TextChanged += new System.EventHandler(this.tb_Description_TextChanged);
