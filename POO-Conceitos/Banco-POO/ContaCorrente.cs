@@ -9,11 +9,18 @@ namespace Banco_POO
 {
     internal class ContaCorrente
     {
-        public Cliente Titular;
+        private Cliente _Titular;
+
+        public Cliente titular
+        {
+            get { return _Titular; }
+            set { _Titular = value; }
+        }
+
+
         public int NumeroAgencia;
         public int NumeroConta;
         private double _Saldo;
-
         public double Saldo
         {
             get

@@ -12,7 +12,10 @@ namespace Banco_POO
         {
             ContaCorrente contaDoToninho = new ContaCorrente();
             Cliente Toninho = new Cliente();
-            contaDoToninho.Titular = Toninho;
+            contaDoToninho.titular = Toninho;
+
+
+
             contaDoToninho.Deposita(1000);
             Console.Write(contaDoToninho.Saldo);  
             Console.ReadKey();
