@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace To_Do_List___Forms
 {
-    internal class CadastroTarefas
+    internal class CadastroTarefas  
     {
 
         private string connectionString = "Data Source = ISAC; Initial Catalog = Testes; Integrated Security = True";
