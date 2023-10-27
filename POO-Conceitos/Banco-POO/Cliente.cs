@@ -8,12 +8,8 @@ namespace Banco_POO
 {
     internal class Cliente
     {
-        public string nome;
-        public int CPF;
-        public int id;
+        public string Nome { get; set; }
+        public int CPF { get; set; } 
+        public int id { get; set; }
     }
-
-    
-
-    
 }

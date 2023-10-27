@@ -10,16 +10,15 @@ namespace Banco_POO
     internal class ContaCorrente
     {
         private Cliente _Titular;
-
         public Cliente titular
         {
             get { return _Titular; }
             set { _Titular = value; }
         }
+        public int NumeroAgencia { get; set; }
 
+        public int NumeroConta { get; set; }
 
-        public int NumeroAgencia;
-        public int NumeroConta;
         private double _Saldo;
         public double Saldo
         {
@@ -36,6 +35,9 @@ namespace Banco_POO
                 _Saldo = value;
             } 
         }
+
+        public static int quantidadeContas { get; set; }
+
         public void SacaDinheiro(double Valor)
         {
                if(Valor <= this._Saldo)
@@ -45,7 +47,7 @@ namespace Banco_POO
                }
             else
             {
-                Console.WriteLine("O valor que deseja sacar é menor que o saldo de sua conta");
+                Console.WriteLine("O valor que deseja sacar é menor que o saldo de sua conta, seu saldo atual é: " + _Saldo);
             }       
         }
 
@@ -54,7 +56,7 @@ namespace Banco_POO
             if (Valor > 0)
             {
                 this._Saldo += Valor;
-                Console.WriteLine("Deposito efetuado");
+                Console.WriteLine("Deposito efetuado. Saldo atual: " + this._Saldo);
             }
             else
             {
@@ -74,6 +76,11 @@ namespace Banco_POO
                 Console.WriteLine("Você está tentando transferir um valor maior do que o possuido, seu saldo atual é: " + this._Saldo);
             }
         }
-
+        public ContaCorrente(int agencia, int numeroConta)
+        {
+            this.NumeroAgencia = agencia;
+            this.NumeroConta = numeroConta;
+            quantidadeContas++;
+        }
     }
 }    
