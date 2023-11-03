@@ -11,5 +11,8 @@ namespace Banco_POO
         public string Nome { get; set; }
         public int CPF { get; set; } 
         public int id { get; set; }
+ 
     }
+
+    
 }
