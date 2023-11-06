@@ -8,6 +8,11 @@ namespace Banco_POO.Funcionarios
 {
     internal class Gerente : Funcionario
     {
+        public Gerente(string cpf, double salarioBase) : base(cpf, salarioBase)
+        {
+
+        }
+
         public override double GetBonificacao()
         {
             return this.Salario * 0.5;

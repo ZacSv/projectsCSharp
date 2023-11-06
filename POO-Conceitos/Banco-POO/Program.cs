@@ -11,15 +11,7 @@ namespace Banco_POO
     {
         static void Main(string[] args)
         {
-            Funcionario Isac = new Diretor();
-            Funcionario Karyne = new Funcionario();
-
-            Isac.Salario = 5000;
-            Karyne.Salario = 5000;
-
-            Console.WriteLine(Isac.GetBonificacao());
-            Console.WriteLine(Karyne.GetBonificacao());
-            Console.ReadKey();
+       
         }
     }
 }
