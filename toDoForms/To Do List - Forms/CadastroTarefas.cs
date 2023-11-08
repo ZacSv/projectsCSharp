@@ -28,7 +28,6 @@ namespace To_Do_List___Forms
                 string queryDelete = "UPDATE Tarefas SET ID_Tasks = ID_Tasks -1 WHERE ID_Tasks > @IDTask";
                 using (SqlConnection conexao = new SqlConnection(connectionString))
                 {
-                    Console.WriteLine("CHEGUEI AQUI EM 2");
                     using (SqlCommand cmd = new SqlCommand(queryDelete, conexao))
                     {
                         cmd.Parameters.AddWithValue("@IDTask", idDeletado);

@@ -7,17 +7,12 @@ using System.Threading.Tasks;
 
 namespace Banco_POO.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
         public static int TotalDeFuncionarios { get; private set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
-        public double Salario { get; set; }
-
-        public virtual double GetBonificacao()
-        {
-            return this.Salario * 0.1;
-        }
+        public double Salario { get; protected set; }
 
         public Funcionario(string cpf, double salarioBase)
         {
@@ -26,10 +21,8 @@ namespace Banco_POO.Funcionarios
             TotalDeFuncionarios += TotalDeFuncionarios;
         }
 
-        public virtual void AumentaSalario()
-        {
-             Salario = Salario * 1.1;
-        }
-
+        public abstract void AumentaSalario();
+        public abstract double GetBonificacao();
+      
     }
 }

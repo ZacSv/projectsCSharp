@@ -11,7 +11,7 @@ namespace Banco_POO
     {
         static void Main(string[] args)
         {
-       
+           Diretor = 
         }
-    }
+    }   
 }

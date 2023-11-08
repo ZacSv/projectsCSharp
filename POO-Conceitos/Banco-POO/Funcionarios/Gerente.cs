@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banco_POO.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,16 +7,20 @@ using System.Threading.Tasks;
 
 namespace Banco_POO.Funcionarios
 {
-    internal class Gerente : Funcionario
+    internal class Gerente : Autenticavel
     {
         public Gerente(string cpf, double salarioBase) : base(cpf, salarioBase)
         {
 
         }
-
         public override double GetBonificacao()
         {
             return this.Salario * 0.5;
+        }
+
+        public override void AumentaSalario()
+        {
+             Salario *= 0.2;
         }
     }
 }
